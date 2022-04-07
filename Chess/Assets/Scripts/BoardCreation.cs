@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class BoardCreation : MonoBehaviour
 {
+    public Vector3[] pawnPositions;
+    public Vector3[] castlePositions;
+    public Vector3[] knightPositions;
+    public Vector3[] bishopPositions;
+    public Vector3[] kingPositions;
+    public Vector3[] queenPositions;
     public Transform colour1;
     public Transform colour2;
     public Transform pawn1;
@@ -22,17 +28,33 @@ public class BoardCreation : MonoBehaviour
     private void Awake()
     {
         MakeBoard();
+        MakeAllPieces();
     }
 
 //for each type of piece, make some pieces
     private void MakeAllPieces()
     {
-        Vector3[] pawnPositions = new Vector3[8];
+        pawnPositions = new Vector3[8];
         for(int i = 0; i < 8; i++)
         {
-            pawnPositions[i] = new Vector3();
+            pawnPositions[i] = new Vector3(i-4, -3, 0);
         }
         MakePiecesOfType(pawn1, pawn2, pawnPositions);
+
+        castlePositions = new Vector3[] {new Vector3(-4, -4, 0), new Vector3(3, -4, 0)};
+        MakePiecesOfType(castle1, castle2, castlePositions);
+
+        knightPositions = new Vector3[] {new Vector3(-3, -4, 0), new Vector3(2, -4, 0)};
+        MakePiecesOfType(knight1, knight2, knightPositions);
+
+        bishopPositions = new Vector3[] {new Vector3(-2, -4, 0), new Vector3(1, -4, 0)};
+        MakePiecesOfType(bishop1, bishop2, bishopPositions);
+
+        kingPositions = new Vector3[] {new Vector3(-1, -4, 0)};
+        MakePiecesOfType(king1, king2, kingPositions);
+
+        queenPositions = new Vector3[] {new Vector3(1, -4, 0)};
+        MakePiecesOfType(queen1, queen2, queenPositions);
     }
 
 //this method makes pieces of specific type (pawn, knight, bishop etc) when fed a list of coordinates and which piece to make
@@ -45,7 +67,14 @@ public class BoardCreation : MonoBehaviour
         
         for(int i = 0; i < positions.Length; i++)
         {
-            positions[i].y += 8;
+            if(positions[i].y == -3)
+            {
+                positions[i].y += 5;
+            }
+            else
+            {
+                positions[i].y += 8;
+            }
             Instantiate(piece2, positions[i], Quaternion.identity);
         }
     }
