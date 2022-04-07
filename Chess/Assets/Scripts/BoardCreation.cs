@@ -53,7 +53,7 @@ public class BoardCreation : MonoBehaviour
         kingPositions = new Vector3[] {new Vector3(-1, -4, 0)};
         MakePiecesOfType(king1, king2, kingPositions);
 
-        queenPositions = new Vector3[] {new Vector3(1, -4, 0)};
+        queenPositions = new Vector3[] {new Vector3(0, -4, 0)};
         MakePiecesOfType(queen1, queen2, queenPositions);
     }
 
@@ -73,7 +73,7 @@ public class BoardCreation : MonoBehaviour
             }
             else
             {
-                positions[i].y += 8;
+                positions[i].y += 7;
             }
             Instantiate(piece2, positions[i], Quaternion.identity);
         }

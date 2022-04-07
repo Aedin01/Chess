@@ -163,10 +163,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pawnPositions: []
+  castlePositions: []
+  knightPositions: []
+  bishopPositions: []
+  kingPositions: []
+  queenPositions: []
   colour1: {fileID: 1595525735615547151, guid: 07f70bb16820bc245848c2e33f86592e, type: 3}
   colour2: {fileID: 5126504500694612798, guid: 755a11dc8366f334587c7822703d1d54, type: 3}
-  pawn1: {fileID: 217270035316936937, guid: 7f875f3188544124caa3da6bb2af6830, type: 3}
-  pawn2: {fileID: 8215960218719523841, guid: 1f58a8326587f9548b32e8e89b6d2980, type: 3}
+  pawn1: {fileID: 5849815558127374955, guid: 250aaa930a95e7f40bf05ce0025fa0ab, type: 3}
+  pawn2: {fileID: 7254467757378168773, guid: 7636bda7a0887e74bb79697bb8af45e1, type: 3}
+  castle1: {fileID: 3007864971605708258, guid: bba46fdc19d6b5c40988153b5f2a3319, type: 3}
+  castle2: {fileID: 3201368088796474870, guid: e8464a78c0b82c045869120e19f928a6, type: 3}
+  knight1: {fileID: 5075478333436580965, guid: 76e40b3ab1faf3940968c1f9e1559121, type: 3}
+  knight2: {fileID: 4465950462008073196, guid: 772d22521d7baf248a6ac75cd14f6aae, type: 3}
+  bishop1: {fileID: 8388472765653067232, guid: 7fd265b2ec1682345a96e7a1d0b8e94c, type: 3}
+  bishop2: {fileID: 1222416514491446462, guid: 4b56995abfeaebc4b98b2e5148422883, type: 3}
+  queen1: {fileID: 1232854549738921653, guid: 36e4fdb6d2957a24f9ddbe4acf8e48c4, type: 3}
+  queen2: {fileID: 4891783472346472647, guid: 04c2bbc418fec4b4789907e358755e8c, type: 3}
+  king1: {fileID: 7075160807963910319, guid: 8e3c6c6d91e992945abda9f9b6128284, type: 3}
+  king2: {fileID: 6911344975106193010, guid: cf5a235b5c116934382f2705ee625548, type: 3}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -177,7 +192,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
