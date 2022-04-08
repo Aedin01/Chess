@@ -10,6 +10,7 @@ public class BoardCreation : MonoBehaviour
     public Vector3[] bishopPositions;
     public Vector3[] kingPositions;
     public Vector3[] queenPositions;
+    public static Transform[] squarePositions = new Transform[64];
     public Transform colour1;
     public Transform colour2;
     public Transform pawn1;
@@ -81,6 +82,7 @@ public class BoardCreation : MonoBehaviour
 
     private void MakeBoard()
     {
+        int i = 0;
         for(int y = 0; y < 8; y++)
         {
             for (int x = 0; x < 8; x++)
@@ -89,22 +91,26 @@ public class BoardCreation : MonoBehaviour
                 {
                     if(x % 2 == 1)
                     {
-                        Instantiate(colour1, new Vector3(x-4, y-4, 0), Quaternion.identity);
+                        squarePositions[i] = Instantiate(colour1, new Vector3(x-4, y-4, 0), Quaternion.identity).transform;
+                        i++;
                     }
                     else if(x % 2 != 1)
                     {
-                        Instantiate(colour2, new Vector3(x-4, y-4, 0), Quaternion.identity);
+                        squarePositions[i] = Instantiate(colour2, new Vector3(x-4, y-4, 0), Quaternion.identity);
+                        i++;
                     }
                 }
                 else if(y % 2 != 1)
                 {
                     if(x % 2 == 1)
                     {
-                        Instantiate(colour2, new Vector3(x-4, y-4, 0), Quaternion.identity);
+                        squarePositions[i] = Instantiate(colour2, new Vector3(x-4, y-4, 0), Quaternion.identity);
+                        i++;
                     }
                     else if(x % 2 != 1)
                     {
-                        Instantiate(colour1, new Vector3(x-4, y-4, 0), Quaternion.identity);
+                        squarePositions[i] = Instantiate(colour1, new Vector3(x-4, y-4, 0), Quaternion.identity);
+                        i++;
                     }
                 }
             }
