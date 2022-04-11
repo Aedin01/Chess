@@ -168,8 +168,71 @@ MonoBehaviour:
   bishopPositions: []
   kingPositions: []
   queenPositions: []
-  colour1: {fileID: 1595525735615547151, guid: 07f70bb16820bc245848c2e33f86592e, type: 3}
-  colour2: {fileID: 5126504500694612798, guid: 755a11dc8366f334587c7822703d1d54, type: 3}
+  squarePositions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   pawn1: {fileID: 5849815558127374955, guid: 250aaa930a95e7f40bf05ce0025fa0ab, type: 3}
   pawn2: {fileID: 7254467757378168773, guid: 7636bda7a0887e74bb79697bb8af45e1, type: 3}
   castle1: {fileID: 3007864971605708258, guid: bba46fdc19d6b5c40988153b5f2a3319, type: 3}
@@ -182,6 +245,10 @@ MonoBehaviour:
   queen2: {fileID: 4891783472346472647, guid: 04c2bbc418fec4b4789907e358755e8c, type: 3}
   king1: {fileID: 7075160807963910319, guid: 8e3c6c6d91e992945abda9f9b6128284, type: 3}
   king2: {fileID: 6911344975106193010, guid: cf5a235b5c116934382f2705ee625548, type: 3}
+  tile: {fileID: 2731553899135410435, guid: 29670745f2e095840995d377e471518a, type: 3}
+  colour1: {r: 0.6981132, g: 0.2863724, b: 0, a: 1}
+  colour2: {r: 1, g: 0.5962106, b: 0, a: 1}
+  _renderer: {fileID: 3785939037484692814, guid: 29670745f2e095840995d377e471518a, type: 3}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -233,7 +300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 3.5, y: 3.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
