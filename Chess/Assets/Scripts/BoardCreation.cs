@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BoardCreation : MonoBehaviour
@@ -10,7 +8,7 @@ public class BoardCreation : MonoBehaviour
     public Vector3[] bishopPositions;
     public Vector3[] kingPositions;
     public Vector3[] queenPositions;
-    public Transform[] squarePositions = new Transform[64];
+    public static Transform[] squarePositions = new Transform[64];
     public Transform pawn1;
     public Transform pawn2;
     public Transform castle1;
@@ -75,15 +73,25 @@ public class BoardCreation : MonoBehaviour
 
     private void MakeBoard()
     {
-        for(int y = 0; y < 8; y++)
+        int i = 0;
+        for(int y = 0; y < 8 ; y++)
         {
             for (int x = 0; x < 8; x++)
             {
                 var newTile = Instantiate(tile, new Vector3(x, y), Quaternion.identity);
                 newTile.name = $"Tile {x} {y}";
-                var isModTwo = (x % 2 == 0 && y % 2 != 0) || (x % 2 != 0 && y % 2 == 0);
+                bool isModTwo = (x % 2 == 0 && y % 2 != 0) || (x % 2 != 0 && y % 2 == 0);
                 Debug.Log($"{isModTwo} {x} {y}");
-                _renderer.color = isModTwo ? colour1 : colour2;
+                _renderer.color = isModTwo ? colour2 : colour1;
+                squarePositions[i] = newTile;
+                i++;
+
+                if(newTile.position.x != 7)
+                {
+                    isModTwo = !isModTwo;
+                    _renderer.color = isModTwo ? colour2 : colour1; 
+                }
+
 
                 // Less efficient method for above code (_renderer.color = isModTwo ? colour1 : colour2;)
 
