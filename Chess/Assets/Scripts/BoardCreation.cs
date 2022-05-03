@@ -2,13 +2,8 @@ using UnityEngine;
 
 public class BoardCreation : MonoBehaviour
 {
-    public Vector3[] pawnPositions;
-    public Vector3[] castlePositions;
-    public Vector3[] knightPositions;
-    public Vector3[] bishopPositions;
-    public Vector3[] kingPositions;
-    public Vector3[] queenPositions;
     public static Transform[] squarePositions = new Transform[64];
+    public static Transform[] piecePositions = new Transform[64];
     public Transform pawn1;
     public Transform pawn2;
     public Transform castle1;
@@ -33,41 +28,28 @@ public class BoardCreation : MonoBehaviour
 //for each type of piece, make some pieces
     private void MakeAllPieces()
     {
-        pawnPositions = new Vector3[8];
-        for(int i = 0; i < 8; i++)
-        {
-            pawnPositions[i] = new Vector3(i, 1, 0);
-        }
-        MakePiecesOfType(pawn1, pawn2, pawnPositions);
+        MakePiecesOfType(pawn1, pawn2, 0, 8, true);
 
-        castlePositions = new Vector3[] {new Vector3(0, 0, 0), new Vector3(7, 0, 0)};
-        MakePiecesOfType(castle1, castle2, castlePositions);
+        MakePiecesOfType(castle1, castle2, 0, 2);
 
-        knightPositions = new Vector3[] {new Vector3(1, 0, 0), new Vector3(6, 0, 0)};
-        MakePiecesOfType(knight1, knight2, knightPositions);
+        MakePiecesOfType(knight1, knight2, 1, 2);
 
-        bishopPositions = new Vector3[] {new Vector3(2, 0, 0), new Vector3(5, 0, 0)};
-        MakePiecesOfType(bishop1, bishop2, bishopPositions);
+        MakePiecesOfType(bishop1, bishop2, 2, 2);
 
-        kingPositions = new Vector3[] {new Vector3(3, 0, 0)};
-        MakePiecesOfType(king1, king2, kingPositions);
+        MakePiecesOfType(king1, king2, 3, 1);
 
-        queenPositions = new Vector3[] {new Vector3(4, 0, 0)};
-        MakePiecesOfType(queen1, queen2, queenPositions);
+        MakePiecesOfType(queen1, queen2, 4, 1);
     }
 
 //this method makes pieces of specific type (pawn, knight, bishop etc) when fed a list of coordinates and which piece to make
-    private void MakePiecesOfType(Object piece1, Object piece2, Vector3[] positions)
+    private void MakePiecesOfType(Object piece1, Object piece2, byte piece, byte instances, bool row = false)
     {
-        foreach(Vector3 pos in positions)
+        for (int i = 0; i < instances; i++)
         {
-            Instantiate(piece1, pos, Quaternion.identity);
-        }
-        
-        for(int i = 0; i < positions.Length; i++)
-        {
-            positions[i].y += 7 - 2 * positions[i].y;
-            Instantiate(piece2, positions[i], Quaternion.identity);
+            int x = row ? i : 7 * i + (-2 * i + 1) * piece;
+            int y = row ? 1 : 0;
+            Instantiate(piece1, new Vector3(x, y), Quaternion.identity);
+            Instantiate(piece2, new Vector3(x, 7 - y), Quaternion.identity);
         }
     }
 
